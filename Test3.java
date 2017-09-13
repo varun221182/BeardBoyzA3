@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package bcccp;
-
 import java.awt.EventQueue;
 
 import bcccp.carpark.CarSensor;
@@ -33,17 +32,21 @@ public class Test3 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					
+
 					IAdhocTicketDAO adhocTicketDAO = new AdhocTicketDAO(new AdhocTicketFactory());
 					ISeasonTicketDAO seasonTicketDAO = new SeasonTicketDAO(new UsageRecordFactory());
-					//Created an instance of carpark
-					Carpark carpark = new Carpark("Bathurst Chase", 5, adhocTicketDAO, seasonTicketDAO);
-					System.out.println("Name");
-                    
 					
-					//Invoking calculateAddHocTicketCharge method for the carpark instance
-                    System.out.println(carpark.calculateAddHocTicketCharge(5));
-                                        
+					Carpark carpark = new Carpark("Bathurst Chase", 5, adhocTicketDAO, seasonTicketDAO);
+					
+					ISeasonTicket t1 = new SeasonTicket("S1111","Bathurst Chase", 0L, 0L);
+					ISeasonTicket t2 = new SeasonTicket("S2222","Bathurst Chase", 0L, 0L);
+					
+					carpark.registerSeasonTicket(t1);
+					carpark.registerSeasonTicket(t2);
+					
+					//issue a ticket so that paystation can be tested
+					carpark.issueAdhocTicket();
+					
 				} 
 				catch (Exception e) {
 					e.printStackTrace();
