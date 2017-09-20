@@ -1,6 +1,9 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package bcccp;
-
 import java.awt.EventQueue;
 
 import bcccp.carpark.CarSensor;
@@ -42,7 +45,7 @@ public class Test3 {
 					carpark.registerSeasonTicket(t2);
 					
 					//issue a ticket so that paystation can be tested
-					//carpark.issueAdhocTicket();
+					carpark.issueAdhocTicket();
 					
 				} 
 				catch (Exception e) {

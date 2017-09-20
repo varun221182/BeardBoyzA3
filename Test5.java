@@ -1,6 +1,9 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package bcccp;
-
 import java.awt.EventQueue;
 
 import bcccp.carpark.CarSensor;
@@ -23,13 +26,13 @@ import bcccp.tickets.season.SeasonTicketDAO;
 import bcccp.tickets.season.UsageRecordFactory;
 
 
-public class Test3 {
+public class Test5 {
     
     public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-
+				
 					IAdhocTicketDAO adhocTicketDAO = new AdhocTicketDAO(new AdhocTicketFactory());
 					ISeasonTicketDAO seasonTicketDAO = new SeasonTicketDAO(new UsageRecordFactory());
 					
@@ -42,8 +45,10 @@ public class Test3 {
 					carpark.registerSeasonTicket(t2);
 					
 					//issue a ticket so that paystation can be tested
-					//carpark.issueAdhocTicket();
 					
+					carpark.recordAdhocTicketEntry();
+					                    /*
+				
 				} 
 				catch (Exception e) {
 					e.printStackTrace();
