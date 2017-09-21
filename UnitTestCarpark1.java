@@ -27,7 +27,7 @@ import bcccp.tickets.season.SeasonTicketDAO;
 import bcccp.tickets.season.UsageRecordFactory;
 
 
-public class Test1 {
+public class UnitTestCarpark1 {
     
     public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
