@@ -26,7 +26,7 @@ import bcccp.tickets.season.SeasonTicketDAO;
 import bcccp.tickets.season.UsageRecordFactory;
 
 
-public class Test5 {
+public class UnitTestCarPark5 {
     
     public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -47,7 +47,7 @@ public class Test5 {
 					//issue a ticket so that paystation can be tested
 					
 					carpark.recordAdhocTicketEntry();
-					                    /*
+					                    
 				
 				} 
 				catch (Exception e) {
